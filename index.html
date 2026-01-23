@@ -4,131 +4,102 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IXLOS — Медицинский центр в Навои</title>
-  <meta name="description" content="IXLOS — премиальный медицинский центр в Навои. Диагностика, УЗИ, анализы, приём врачей. Онлайн-запись в Telegram."/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="IXLOS — премиальный медицинский центр в Навои. Диагностика, УЗИ, анализы, приём врачей. Запись в Telegram."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Montserrat,system-ui,-apple-system,sans-serif;background:#fff;color:#0f172a}
+    body{font-family:Inter,system-ui,sans-serif;background:#fff;color:#0f172a}
     a{text-decoration:none;color:inherit}
-    .container{max-width:1100px;margin:0 auto;padding:20px}
-    header{display:flex;align-items:center;gap:14px;padding:10px 0}
-    .logo{width:52px;height:52px;border-radius:14px;background:#ff1a1a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
-    .brand h1{font-size:22px;font-weight:700}
-    .brand p{color:#64748b;font-size:13px}
+    .wrap{max-width:1200px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;gap:16px;background:#ff1a1a;border-radius:20px;padding:18px;margin-bottom:32px}
+    header img{height:52px}
+    header h1{color:#fff;font-size:20px}
+    header p{color:#ffe5e5;font-size:13px}
 
-    .hero{background:#f8fafc;border-radius:20px;padding:28px;display:grid;gap:16px;margin-top:10px}
-    .hero h2{font-size:28px;font-weight:700}
-    .hero p{color:#475569;max-width:680px}
+    .grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    
+    .card{background:#f8fafc;border-radius:20px;padding:24px}
+    .hero h2{font-size:32px;margin-bottom:12px}
+    .hero p{color:#475569;margin-bottom:20px}
     .btn{display:inline-block;padding:14px 20px;border-radius:12px;font-weight:600}
     .primary{background:#ff1a1a;color:#fff}
-    .ghost{border:1px solid #e2e8f0}
+    .ghost{border:1px solid #e2e8f0;margin-left:8px}
 
-    .section{margin-top:36px}
-    .section h3{font-size:22px;margin-bottom:12px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
-    .card{border:1px solid #e2e8f0;border-radius:16px;padding:16px;background:#fff}
-    .card small{color:#64748b}
+    .list{display:grid;gap:12px}
+    .item{border:1px solid #e2e8f0;border-radius:14px;padding:14px}
+    .item small{color:#64748b}
 
-    .about{display:grid;gap:12px;color:#475569}
-
-    .faq details{border:1px solid #e2e8f0;border-radius:14px;padding:14px}
-    .faq summary{font-weight:600;cursor:pointer}
-    .faq p{margin-top:8px;color:#475569}
-
-    .footer{margin:40px 0 80px;color:#64748b}
-
-    .fixed{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:720px}
+    footer{margin-top:60px;color:#64748b}
+    .fixed{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:900px}
     .fixed a{display:block;text-align:center}
   </style>
 </head>
 <body>
 
-<div class="container">
+<div class="wrap">
+
   <header>
-    <header style="background:#ff1a1a;border-radius:20px;padding:16px;display:flex;align-items:center;gap:14px">
-  <img src="logo.png" alt="IXLOS" style="height:48px;object-fit:contain">
-  <div class="brand" style="color:#fff">
-    <h1 style="color:#fff">IXLOS Shifoxona</h1>
-    <p style="color:#ffe5e5">Премиальный медицинский центр в Навои</p>
-  </div>
-</header>
-
-
-  <section class="hero">
-    <h2>Современная медицина без очередей</h2>
-    <p>
-      Диагностика, УЗИ, анализы и приём врачей в комфортной обстановке.
-      Опытные специалисты и современное оборудование.
-    </p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <a class="btn primary" href="https://t.me/ixlos_navoi">Записаться в Telegram</a>
-      <a class="btn ghost" href="#services">Посмотреть услуги</a>
+    <img src="logo.png" alt="IXLOS">
+    <div>
+      <h1>IXLOS Shifoxona</h1>
+      <p>Премиальный медицинский центр в Навои</p>
     </div>
-  </section>
+  </header>
 
-  <section id="about" class="section">
-    <h3>О клинике</h3>
-    <div class="about">
+  <div class="grid">
+    <div class="card hero">
+      <h2>Современная медицина без очередей</h2>
       <p>
+        Диагностика, УЗИ, анализы и приём врачей в комфортной обстановке.
+        Опытные специалисты и современное оборудование.
+      </p>
+      <a href="https://t.me/ixlos_navoi" class="btn primary">Записаться в Telegram</a>
+      <a href="#services" class="btn ghost">Посмотреть услуги</a>
+    </div>
+
+    <div class="card">
+      <h3>О клинике</h3>
+      <p style="color:#475569;margin-top:8px">
         IXLOS — частный медицинский центр премиум-класса в городе Навои.
         Мы объединяем опытных врачей, современные технологии и высокий уровень сервиса.
-      </p>
-      <p>
-        Наша цель — быстро, точно и комфортно помочь каждому пациенту сохранить здоровье.
         Приём по записи, без очередей и лишнего ожидания.
       </p>
     </div>
-  </section>
 
-  <section id="services" class="section">
-    <h3>Услуги</h3>
-    <div class="grid">
-      <div class="card">УЗИ<br><small>Все виды исследований</small></div>
-      <div class="card">Анализы<br><small>Лабораторная диагностика</small></div>
-      <div class="card">Кардиолог<br><small>Сердце и сосуды</small></div>
-      <div class="card">Терапевт<br><small>Первичный приём</small></div>
-      <div class="card">Гинеколог<br><small>Женское здоровье</small></div>
-      <div class="card">Диагностика<br><small>Комплексные обследования</small></div>
+    <div class="card" id="services">
+      <h3>Услуги</h3>
+      <div class="list" style="margin-top:12px">
+        <div class="item">УЗИ<br><small>Все виды исследований</small></div>
+        <div class="item">Анализы<br><small>Лабораторная диагностика</small></div>
+        <div class="item">Кардиолог<br><small>Сердце и сосуды</small></div>
+        <div class="item">Терапевт<br><small>Первичный приём</small></div>
+        <div class="item">Гинеколог<br><small>Женское здоровье</small></div>
+        <div class="item">Диагностика<br><small>Комплексные обследования</small></div>
+      </div>
     </div>
-  </section>
 
-  <section class="section faq">
-    <h3>Вопросы и ответы</h3>
-    <div class="grid">
-      <details class="card">
-        <summary>Безопасно ли проходить обследование?</summary>
-        <p>Да. Мы соблюдаем строгие стандарты стерильности и санитарные нормы.</p>
-      </details>
-      <details class="card">
-        <summary>Как записаться?</summary>
-        <p>Нажмите кнопку «Записаться в Telegram» и напишите оператору.</p>
-      </details>
-      <details class="card">
-        <summary>Работаете ли вы без очередей?</summary>
-        <p>Да. Приём ведётся по записи, без длительного ожидания.</p>
-      </details>
-      <details class="card">
-        <summary>Где вы находитесь?</summary>
-        <p>г. Навои, Xoncharbog' MFY, Nizomiy ko‘chasi, 28-uy.</p>
-      </details>
-    </div>
-  </section>
-
-  <section class="section">
-    <h3>Контакты</h3>
     <div class="card">
-      <p style="color:#475569;margin-bottom:10px">
-        г. Навои, Xoncharbog' MFY, Nizomiy ko‘chasi, 28-uy
-      </p>
-      <a class="btn ghost" href="https://t.me/ixlos_navoi">Написать в Telegram</a>
+      <h3>Вопросы и ответы</h3>
+      <div class="list" style="margin-top:12px">
+        <div class="item">Безопасно ли проходить обследование?</div>
+        <div class="item">Как записаться?</div>
+        <div class="item">Работаете ли вы без очередей?</div>
+        <div class="item">Где вы находитесь?</div>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <div class="footer">© IXLOS Medical Center</div>
+  <footer>
+    г. Навои, Xoncharbog' MFY, Nizomiy ko‘chasi, 28-uy  
+    <br><br>
+    © IXLOS Medical Center
+  </footer>
+
 </div>
 
 <div class="fixed">
-  <a class="btn primary" href="https://t.me/ixlos_navoi">Записаться сейчас</a>
+  <a href="https://t.me/ixlos_navoi" class="btn primary">Записаться сейчас</a>
 </div>
 
 </body>
