@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IXLOS — Медицинский центр в Навои</title>
   <meta name="description" content="IXLOS — премиальный медицинский центр в Навои. Диагностика, УЗИ, анализы, приём врачей. Запись в Telegram."/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:Inter,system-ui,sans-serif;background:#fff;color:#0f172a}
@@ -13,39 +13,40 @@
     .wrap{max-width:1200px;margin:0 auto;padding:24px}
 
     header{
-      background:#ff1a1a;
-      border-radius:20px;
-      padding:18px;
-      margin-bottom:32px;
+      background:linear-gradient(135deg,#ff1a1a,#e00000);
+      border-radius:28px;
+      padding:28px 32px;
+      margin-bottom:36px;
       display:flex;
       align-items:center;
-      gap:16px;
+      gap:24px;
+      box-shadow:0 20px 40px rgba(255,26,26,.25);
     }
-    header h1{color:#fff;font-size:20px}
-    header p{color:#ffe5e5;font-size:13px}
-
     .logo-box{
       background:#fff;
-      border-radius:14px;
-      padding:8px 12px;
+      border-radius:20px;
+      padding:14px 18px;
       display:flex;
       align-items:center;
+      box-shadow:0 10px 20px rgba(0,0,0,.12);
     }
-    .logo-box img{height:40px;object-fit:contain}
+    .logo-box img{height:64px;object-fit:contain}
+    header h1{color:#fff;font-size:26px;font-weight:800;letter-spacing:.2px}
+    header p{color:#ffe5e5;font-size:14px;margin-top:4px}
 
     .grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px}
     @media(max-width:900px){.grid{grid-template-columns:1fr}}
 
-    .card{background:#f8fafc;border-radius:20px;padding:24px}
-    .hero h2{font-size:32px;margin-bottom:12px}
-    .hero p{color:#475569;margin-bottom:20px}
+    .card{background:#f8fafc;border-radius:24px;padding:28px}
+    .hero h2{font-size:34px;margin-bottom:14px;font-weight:800}
+    .hero p{color:#475569;margin-bottom:22px;font-size:15px;line-height:1.6}
 
-    .btn{display:inline-block;padding:14px 20px;border-radius:12px;font-weight:600}
+    .btn{display:inline-block;padding:14px 22px;border-radius:14px;font-weight:600}
     .primary{background:#ff1a1a;color:#fff}
-    .ghost{border:1px solid #e2e8f0;margin-left:8px}
+    .ghost{border:1px solid #e2e8f0;margin-left:10px}
 
     .list{display:grid;gap:12px}
-    .item{border:1px solid #e2e8f0;border-radius:14px;padding:14px}
+    .item{border:1px solid #e2e8f0;border-radius:16px;padding:14px}
     .item small{color:#64748b}
 
     footer{margin-top:60px;color:#64748b}
@@ -58,7 +59,14 @@
       width:calc(100% - 32px);
       max-width:900px;
     }
-    .fixed a{display:block;text-align:center}
+    .fixed a{
+      display:block;
+      text-align:center;
+      padding:18px;
+      font-size:16px;
+      border-radius:18px;
+      box-shadow:0 16px 32px rgba(255,26,26,.35);
+    }
   </style>
 </head>
 <body>
@@ -70,7 +78,7 @@
       <img src="logo.png" alt="IXLOS">
     </div>
     <div>
-      <h1>IXLOS Shifoxona</h1>
+      <h1>IXLOS Shifshoxona</h1>
       <p>Премиальный медицинский центр в Навои</p>
     </div>
   </header>
@@ -88,7 +96,7 @@
 
     <div class="card">
       <h3>О клинике</h3>
-      <p style="color:#475569;margin-top:8px">
+      <p style="color:#475569;margin-top:10px;line-height:1.6">
         IXLOS — частный медицинский центр премиум-класса в городе Навои.
         Мы объединяем опытных врачей, современные технологии и высокий уровень сервиса.
         Приём по записи, без очередей и лишнего ожидания.
@@ -97,7 +105,7 @@
 
     <div class="card" id="services">
       <h3>Услуги</h3>
-      <div class="list" style="margin-top:12px">
+      <div class="list" style="margin-top:14px">
         <div class="item">УЗИ<br><small>Все виды исследований</small></div>
         <div class="item">Анализы<br><small>Лабораторная диагностика</small></div>
         <div class="item">Кардиолог<br><small>Сердце и сосуды</small></div>
@@ -109,7 +117,7 @@
 
     <div class="card">
       <h3>Вопросы и ответы</h3>
-      <div class="list" style="margin-top:12px">
+      <div class="list" style="margin-top:14px">
         <div class="item">Безопасно ли проходить обследование?</div>
         <div class="item">Как записаться?</div>
         <div class="item">Работаете ли вы без очередей?</div>
