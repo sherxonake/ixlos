@@ -11,17 +11,35 @@
     body{font-family:Inter,system-ui,sans-serif;background:#fff;color:#0f172a}
     a{text-decoration:none;color:inherit}
     .wrap{max-width:1200px;margin:0 auto;padding:24px}
-    header{display:flex;align-items:center;gap:16px;background:#ff1a1a;border-radius:20px;padding:18px;margin-bottom:32px}
-    header img{height:52px}
+
+    header{
+      background:#ff1a1a;
+      border-radius:20px;
+      padding:18px;
+      margin-bottom:32px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
     header h1{color:#fff;font-size:20px}
     header p{color:#ffe5e5;font-size:13px}
 
+    .logo-box{
+      background:#fff;
+      border-radius:14px;
+      padding:8px 12px;
+      display:flex;
+      align-items:center;
+    }
+    .logo-box img{height:40px;object-fit:contain}
+
     .grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px}
     @media(max-width:900px){.grid{grid-template-columns:1fr}}
-    
+
     .card{background:#f8fafc;border-radius:20px;padding:24px}
     .hero h2{font-size:32px;margin-bottom:12px}
     .hero p{color:#475569;margin-bottom:20px}
+
     .btn{display:inline-block;padding:14px 20px;border-radius:12px;font-weight:600}
     .primary{background:#ff1a1a;color:#fff}
     .ghost{border:1px solid #e2e8f0;margin-left:8px}
@@ -31,7 +49,15 @@
     .item small{color:#64748b}
 
     footer{margin-top:60px;color:#64748b}
-    .fixed{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:900px}
+
+    .fixed{
+      position:fixed;
+      bottom:16px;
+      left:50%;
+      transform:translateX(-50%);
+      width:calc(100% - 32px);
+      max-width:900px;
+    }
     .fixed a{display:block;text-align:center}
   </style>
 </head>
@@ -40,7 +66,9 @@
 <div class="wrap">
 
   <header>
-    <img src="logo.png" alt="IXLOS">
+    <div class="logo-box">
+      <img src="logo.png" alt="IXLOS">
+    </div>
     <div>
       <h1>IXLOS Shifoxona</h1>
       <p>Премиальный медицинский центр в Навои</p>
