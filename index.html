@@ -9,8 +9,8 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:Inter,sans-serif;background:#fff;color:#0f172a;overflow:hidden}
 
-    /* PRELOADER */
-    #loader{
+    /* INTRO */
+    #intro{
       position:fixed;
       inset:0;
       background:#ff1a1a;
@@ -19,15 +19,11 @@
       justify-content:center;
       z-index:9999;
       animation:fadeOut 1s ease forwards;
-      animation-delay:2.2s;
+      animation-delay:3.2s;
     }
-    #loader img{
-      width:140px;
-      animation:pulse 1.2s infinite ease-in-out;
-    }
-    @keyframes pulse{
-      0%,100%{transform:scale(1)}
-      50%{transform:scale(1.1)}
+    #intro video{
+      width:220px;
+      max-width:70%;
     }
     @keyframes fadeOut{
       to{opacity:0;visibility:hidden}
@@ -37,7 +33,7 @@
     .app{
       opacity:0;
       animation:show 1s ease forwards;
-      animation-delay:2.5s;
+      animation-delay:3.5s;
     }
     @keyframes show{
       to{opacity:1}
@@ -134,8 +130,9 @@
 </head>
 <body>
 
-<div id="loader">
-  <img src="logo.png">
+<!-- INTRO -->
+<div id="intro">
+  <video src="intro.mp4" autoplay muted playsinline></video>
 </div>
 
 <div class="app">
