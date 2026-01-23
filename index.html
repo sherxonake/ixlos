@@ -1,1 +1,134 @@
 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IXLOS — Медицинский центр в Навои</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #fff;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .card {
+      background: #111827;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.3);
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .primary {
+      background: #22c55e;
+      color: #062e14;
+    }
+    .secondary {
+      background: #1e293b;
+      color: #e5e7eb;
+      border: 1px solid #334155;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .item {
+      background: #1e293b;
+      padding: 14px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .footer {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 13px;
+      margin-top: 24px;
+    }
+    .fixed {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 32px);
+      max-width: 448px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <h1>IXLOS</h1>
+      <div class="subtitle">Премиальный медицинский центр в городе Навои</div>
+      <a href="https://t.me/your_telegram_here" class="btn primary">Записаться в Telegram</a>
+      <a href="#services" class="btn secondary">Наши услуги</a>
+    </div>
+
+    <div class="card" id="services">
+      <h2>Услуги</h2>
+      <div class="grid">
+        <div class="item">УЗИ</div>
+        <div class="item">Анализы</div>
+        <div class="item">Кардиолог</div>
+        <div class="item">Терапевт</div>
+        <div class="item">Гинеколог</div>
+        <div class="item">Диагностика</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Почему IXLOS?</h2>
+      <div class="grid">
+        <div class="item">Современное оборудование</div>
+        <div class="item">Опытные врачи</div>
+        <div class="item">Комфорт и стерильность</div>
+        <div class="item">Быстрая запись</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Контакты</h2>
+      <p class="subtitle">Город Навои, Узбекистан</p>
+      <a href="https://t.me/your_telegram_here" class="btn secondary">Написать в Telegram</a>
+    </div>
+
+    <div class="footer">
+      © IXLOS Medical Center
+    </div>
+  </div>
+
+  <div class="fixed">
+    <a href="https://t.me/your_telegram_here" class="btn primary">Записаться сейчас</a>
+  </div>
+
+</body>
+</html>
