@@ -132,9 +132,18 @@
       border:0;
     }
 
+    /* MOBILE FIX */
     @media(max-width:700px){
-      h1{font-size:34px}
-      .hero{padding:24px}
+      h1{font-size:32px}
+      .hero{
+        min-height:70vh;
+        padding:24px;
+      }
+      .hero::before{
+        background:
+          linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.85)),
+          url("team.jpg") center 45% / cover no-repeat;
+      }
     }
   </style>
 </head>
