@@ -10,7 +10,8 @@
     *{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;
-      background:#0b1220;color:#fff;
+      background:#0b1220;
+      color:#fff;
     }
     a{text-decoration:none;color:inherit}
     section{padding:80px 6vw}
@@ -54,14 +55,17 @@
       cursor:pointer;
     }
 
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+    /* GRID */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
     .card{transition:.25s}
     .card:hover{transform:translateY(-6px)}
 
+    /* FAQ */
     .faq-item{margin-bottom:12px}
     .faq-q{cursor:pointer;font-weight:600}
     .faq-a{display:none;opacity:.85;margin-top:6px}
 
+    /* MODAL */
     .modal{
       position:fixed;inset:0;
       background:rgba(0,0,0,.75);
@@ -81,6 +85,7 @@
       cursor:pointer;z-index:2;
     }
 
+    /* CALL BTN */
     .call-btn{
       position:fixed;right:16px;bottom:90px;
       width:56px;height:56px;border-radius:50%;
@@ -95,9 +100,19 @@
       100%{box-shadow:0 0 0 0 rgba(255,31,31,0)}
     }
 
+    .contacts a{color:#ff6b6b;font-weight:600}
+    .map-btn{
+      display:inline-block;
+      margin-top:14px;
+      padding:12px 20px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#ff2a2a,#c60000);
+      color:#fff;
+      box-shadow:0 10px 24px rgba(255,0,0,.35);
+    }
+
     footer{padding:32px;text-align:center;opacity:.7}
 
-    /* MOBILE FIX */
     @media(max-width:700px){
       .hero h1{font-size:30px}
       .hero::before{
@@ -122,7 +137,10 @@
 <section>
   <div class="glass">
     <h2>Biz haqimizda / О клинике</h2>
-    <p>IXLOS — Навоий шаҳридаги премиум тиббий марказ. Биз замонавий технологиялар, тажрибали шифокорлар ва юқори сервисни бирлаштирамиз.</p>
+    <p>
+      IXLOS — Навоий шаҳридаги премиум тиббий марказ. Биз замонавий технологиялар,
+      тажрибали шифокорлар ва юқори сервисни бирлаштирамиз.
+    </p>
   </div>
 </section>
 
@@ -142,17 +160,22 @@
   <h2>Savollar / Вопросы</h2>
   <div class="glass faq-item">
     <div class="faq-q" onclick="toggleFAQ(this)">Qanday yozilish mumkin?</div>
-    <div class="faq-a">Сайтдаги “Qabulga yozilish” тугмасини босинг.</div>
+    <div class="faq-a">
+      “Qabulga yozilish” тугмасини босинг ёки Telegram орқали бизга ёзинг.
+    </div>
   </div>
 </section>
 
 <section>
-  <div class="glass">
-    <h2>Kontaktlar</h2>
+  <div class="glass contacts">
+    <h2>Kontaktlar / Контакты</h2>
     <p>📍 г. Навои, Xoncharbog' MFY, Nizomiy ko'chasi, 28-uy</p>
     <p>📞 <a href="tel:+998792000303">+998 79 200 03 03</a></p>
     <p>💬 <a href="https://t.me/ixlos_medical" target="_blank">@ixlos_medical</a></p>
-    <iframe src="https://yandex.uz/profile/240550900992?lang=ru" style="width:100%;height:300px;border-radius:16px;margin-top:12px;border:0"></iframe>
+
+    <a class="map-btn" href="https://yandex.uz/profile/240550900992?lang=ru" target="_blank">
+      📍 Открыть на карте
+    </a>
   </div>
 </section>
 
@@ -172,12 +195,16 @@
 
 <script async src="https://tally.so/widgets/embed.js"></script>
 <script>
-function openForm(){document.getElementById('formModal').classList.add('active')}
-function closeForm(){document.getElementById('formModal').classList.remove('active')}
-function toggleFAQ(el){
-  const a=el.nextElementSibling;
-  a.style.display=a.style.display==="block"?"none":"block";
-}
+  function openForm(){
+    document.getElementById('formModal').classList.add('active');
+  }
+  function closeForm(){
+    document.getElementById('formModal').classList.remove('active');
+  }
+  function toggleFAQ(el){
+    const a = el.nextElementSibling;
+    a.style.display = a.style.display === "block" ? "none" : "block";
+  }
 </script>
 
 </body>
