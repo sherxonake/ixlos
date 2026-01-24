@@ -90,9 +90,32 @@
       box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
     }
 
+    .contacts{
+      margin-top:56px;
+      background:linear-gradient(180deg,#141a29,#0e131d);
+      border-radius:24px;
+      padding:28px;
+      display:grid;
+      gap:12px;
+      text-align:center;
+    }
+    .contacts a{
+      color:#ff6b6b;
+      font-weight:600;
+    }
+    .map-btn{
+      display:inline-block;
+      margin-top:10px;
+      padding:12px 20px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#ff2a2a,#c60000);
+      color:#fff;
+      box-shadow:0 10px 24px rgba(255,0,0,.35);
+    }
+
     footer{
       color:var(--muted);
-      margin:48px 0 24px;
+      margin:28px 0 24px;
       text-align:center;
       line-height:1.6;
     }
@@ -133,7 +156,6 @@
       border:0;
     }
 
-    /* CALL BUTTON */
     .call-btn{
       position:fixed;
       right:16px;
@@ -159,10 +181,7 @@
 
     @media(max-width:700px){
       h1{font-size:32px}
-      .hero{
-        min-height:70vh;
-        padding:24px;
-      }
+      .hero{min-height:70vh;padding:24px}
       .hero::before{
         background:
           linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.85)),
@@ -195,31 +214,36 @@
         Tajribali shifokorlar va zamonaviy texnologiyalar.
       </p>
     </div>
-
     <div class="card">
       <h3>Xizmatlar / Услуги</h3>
       <p class="muted">UZI, Analizlar, Kardiolog, Ginekolog, Terapevt, Diagnostika</p>
     </div>
-
     <div class="card">
       <h3>Savollar / Вопросы</h3>
       <p class="muted">
         Qanday yozilish mumkin? / Как записаться?<br>
-        <a href="https://t.me/ixlos_medical" target="_blank" style="color:#ff6b6b">
-          Telegram: @ixlos_medical
-        </a>
+        <a href="https://t.me/ixlos_medical" target="_blank">Telegram: @ixlos_medical</a>
       </p>
     </div>
   </div>
 
+  <div class="contacts">
+    <div>📍 Manzil / Адрес:</div>
+    <div class="muted">г. Навои, Xoncharbog' MFY, Nizomiy ko'chasi, 28-uy</div>
+    <div>
+      Telegram: <a href="https://t.me/ixlos_medical" target="_blank">@ixlos_medical</a><br>
+      Tel: <a href="tel:+998792000303">+998 79 200 03 03</a>
+    </div>
+    <a class="map-btn" href="https://yandex.uz/profile/240550900992?lang=ru" target="_blank">
+      📍 Открыть на карте
+    </a>
+  </div>
+
   <footer>
-    г. Навои, Xoncharbog' MFY, Nizomiy ko'chasi, 28-uy<br>
-    Telegram: <a href="https://t.me/ixlos_medical" target="_blank" style="color:#ff6b6b">@ixlos_medical</a><br>
     © IXLOS Medical Center
   </footer>
 </div>
 
-<!-- MODAL -->
 <div class="modal" id="modal">
   <div class="modal-box">
     <div class="modal-close" onclick="closeModal()">✕</div>
@@ -227,7 +251,6 @@
   </div>
 </div>
 
-<!-- CALL BUTTON -->
 <a href="tel:+998792000303" class="call-btn">📞</a>
 
 <script>
