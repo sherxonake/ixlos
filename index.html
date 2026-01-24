@@ -3,171 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IXLOS — Ko`p tarmoqli shifoxonasi </title>
+  <title>IXLOS — Premium Medical Center</title>
 
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/favicon.ico">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico">
 
   <style>
-    :root{
-      --bg:#0b0f14;
-      --card:#121826;
-      --text:#e5e7eb;
-      --muted:#9ca3af;
-      --red:#ff1f1f;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0b1220;color:#fff}
     a{text-decoration:none;color:inherit}
-    .container{max-width:1200px;margin:0 auto;padding:24px}
 
     .hero{
       position:relative;
-      min-height:80vh;
-      border-radius:28px;
-      overflow:hidden;
+      min-height:100vh;
+      padding:40px;
       display:flex;
-      align-items:flex-end;
-      padding:48px;
-      box-shadow:0 40px 120px rgba(0,0,0,.6);
+      align-items:center;
     }
     .hero::before{
       content:"";
       position:absolute;inset:0;
       background:
-        linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.8)),
-        url("team.jpg") center 25% / cover no-repeat;
+        linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.85)),
+        url("team.jpg") center 30% / cover no-repeat;
+      z-index:-1;
     }
-    .hero-content{
-      position:relative;
+    .box{
       max-width:640px;
+      background:rgba(0,0,0,.55);
+      backdrop-filter:blur(10px);
+      border-radius:24px;
+      padding:32px;
+      box-shadow:0 30px 80px rgba(0,0,0,.5);
     }
-    .badge{
-      display:inline-block;
-      background:rgba(255,255,255,.12);
-      padding:6px 12px;
-      border-radius:999px;
-      font-size:12px;
-      margin-bottom:12px;
-      backdrop-filter:blur(6px);
-    }
-    h1{font-size:48px;line-height:1.1;margin:0 0 12px}
-    .lead{color:#e5e7eb;margin-bottom:20px}
-    .muted{color:var(--muted)}
+    .box h1{font-size:42px;line-height:1.1;margin-bottom:12px}
+    .box p{opacity:.85;margin-bottom:20px}
     .btn{
       display:inline-block;
       padding:14px 22px;
       border-radius:14px;
-      font-weight:600;
-      margin-right:10px;
-    }
-    .primary{
-      background:linear-gradient(135deg,#ff2a2a,#c60000);
-      color:white;
-      box-shadow:0 10px 30px rgba(255,0,0,.35);
-    }
-    .secondary{border:1px solid rgba(255,255,255,.2)}
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:20px;
-      margin-top:32px;
-    }
-    .card{
-      background:linear-gradient(180deg,#141a29,#0e131d);
-      border-radius:20px;
-      padding:24px;
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
-    }
-
-    .contacts{
-      margin-top:56px;
-      background:linear-gradient(180deg,#141a29,#0e131d);
-      border-radius:24px;
-      padding:28px;
-      display:grid;
-      gap:12px;
-      text-align:center;
-    }
-    .contacts a{
-      color:#ff6b6b;
-      font-weight:600;
-    }
-    .map-btn{
-      display:inline-block;
-      margin-top:10px;
-      padding:12px 20px;
-      border-radius:14px;
       background:linear-gradient(135deg,#ff2a2a,#c60000);
       color:#fff;
-      box-shadow:0 10px 24px rgba(255,0,0,.35);
+      font-weight:600;
+      box-shadow:0 20px 40px rgba(255,0,0,.35);
+      cursor:pointer;
     }
 
-    footer{
-      color:var(--muted);
-      margin:28px 0 24px;
-      text-align:center;
-      line-height:1.6;
-    }
-
-    /* MODAL */
+    /* Modal */
     .modal{
-      position:fixed;
-      inset:0;
+      position:fixed;inset:0;
       background:rgba(0,0,0,.75);
       display:none;
       align-items:center;
       justify-content:center;
       z-index:999;
-      backdrop-filter:blur(6px);
     }
     .modal.active{display:flex}
     .modal-box{
-      width:90%;
-      max-width:640px;
-      height:80vh;
-      background:#0b0f14;
-      border-radius:20px;
+      width:min(92vw,720px);
+      height:min(90vh,720px);
+      background:#fff;
+      border-radius:18px;
       overflow:hidden;
       position:relative;
-      box-shadow:0 40px 120px rgba(0,0,0,.8);
     }
-    .modal-close{
+    .close{
       position:absolute;
-      top:10px;right:14px;
-      font-size:22px;
+      top:10px;right:12px;
+      background:#000;
+      color:#fff;
+      border-radius:50%;
+      width:32px;height:32px;
+      display:flex;align-items:center;justify-content:center;
       cursor:pointer;
       z-index:2;
-      color:#fff;
-    }
-    .modal iframe{
-      width:100%;
-      height:100%;
-      border:0;
     }
 
+    /* Call button */
     .call-btn{
       position:fixed;
       right:16px;
       bottom:90px;
-      width:56px;
-      height:56px;
+      width:56px;height:56px;
       border-radius:50%;
       background:linear-gradient(135deg,#ff2a2a,#c60000);
       color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      display:flex;align-items:center;justify-content:center;
       font-size:24px;
       box-shadow:0 20px 40px rgba(255,0,0,.45);
       z-index:998;
@@ -179,91 +99,68 @@
       100%{box-shadow:0 0 0 0 rgba(255,31,31,0)}
     }
 
-    @media(max-width:700px){
-      h1{font-size:32px}
-      .hero{min-height:70vh;padding:24px}
+    footer{
+      padding:24px;
+      text-align:center;
+      opacity:.7;
+      font-size:14px;
+      background:#0b1220;
+    }
+
+    @media (max-width:700px){
+      .hero{padding:20px}
       .hero::before{
         background:
-          linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.85)),
+          linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.9)),
           url("team.jpg") center 45% / cover no-repeat;
       }
+      .box h1{font-size:30px}
     }
   </style>
 </head>
 <body>
 
-<div class="container">
   <section class="hero">
-    <div class="hero-content">
-      <div class="badge">IXLOS Shifoxonasi — Xalq tanlovi</div>
+    <div class="box">
       <h1>Sog‘lig‘ingiz ishonchli qo‘llarda</h1>
-      <p class="lead">
-        Sizga eng yuqori darajadagi tibbiy xizmatlarni taklif qilamiz.<br>
-        <span class="muted">Ваше здоровье — в надёжных руках.</span>
-      </p>
-      <a href="#" class="btn primary" onclick="openModal()">Qabulga yozilish / Записаться</a>
-      <a href="#services" class="btn secondary">Xizmatlar / Услуги</a>
+      <p>Ваше здоровье — в надёжных руках</p>
+      <p>IXLOS — Навоидаги премиум тиббий марказ.</p>
+      <div class="btn" onclick="openForm()">Qabulga yozilish / Записаться</div>
     </div>
   </section>
 
-  <div id="services" class="grid">
-    <div class="card">
-      <h3>Biz haqimizda / О клинике</h3>
-      <p class="muted">
-        IXLOS — Navoiy shahridagi premium tibbiy markaz.
-        Tajribali shifokorlar va zamonaviy texnologiyalar.
-      </p>
-    </div>
-    <div class="card">
-      <h3>Xizmatlar / Услуги</h3>
-      <p class="muted">UZI, Analizlar, Kardiolog, Ginekolog, Terapevt, Diagnostika</p>
-    </div>
-    <div class="card">
-      <h3>Savollar / Вопросы</h3>
-      <p class="muted">
-        Qanday yozilish mumkin? / Как записаться?<br>
-        <a href="https://t.me/ixlos_medical" target="_blank">Telegram: @ixlos_medical</a>
-      </p>
+  <!-- Modal with Tally -->
+  <div class="modal" id="formModal">
+    <div class="modal-box">
+      <div class="close" onclick="closeForm()">×</div>
+      <iframe
+        data-tally-src="https://tally.so/r/EkxBLq"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="IXLOS — Qabulga yozilish">
+      </iframe>
     </div>
   </div>
 
-  <div class="contacts">
-    <div>📍 Manzil / Адрес:</div>
-    <div class="muted">г. Навои, Xoncharbog' MFY, Nizomiy ko'chasi, 28-uy</div>
-    <div>
-      Telegram: <a href="https://t.me/ixlos_medical" target="_blank">@ixlos_medical</a><br>
-      Tel: <a href="tel:+998792000303">+998 79 200 03 03</a>
-    </div>
-    <a class="map-btn" href="https://yandex.uz/profile/240550900992?lang=ru" target="_blank">
-      📍 Открыть на карте
-    </a>
-  </div>
+  <a href="tel:+998792000303" class="call-btn">📞</a>
 
- <footer>
-  © IXLOS Medical Center<br>
-  <span class="muted" style="font-size:13px">
+  <footer>
+    © IXLOS Medical Center<br>
     Powered by <a href="https://t.me/sherxon571" target="_blank" style="color:#ff6b6b">@sherxon571</a>
-  </span>
-</footer>
-</div>
+  </footer>
 
-<div class="modal" id="modal">
-  <div class="modal-box">
-    <div class="modal-close" onclick="closeModal()">✕</div>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScEF2-_Bda1XrJFukFhvuK5s3j4WWE3Fgyj2XPbcLAJpZ5_oA/viewform?embedded=true"></iframe>
-  </div>
-</div>
-
-<a href="tel:+998792000303" class="call-btn">📞</a>
-
-<script>
-  function openModal(){
-    document.getElementById('modal').classList.add('active');
-  }
-  function closeModal(){
-    document.getElementById('modal').classList.remove('active');
-  }
-</script>
+  <script async src="https://tally.so/widgets/embed.js"></script>
+  <script>
+    function openForm(){
+      document.getElementById('formModal').classList.add('active');
+    }
+    function closeForm(){
+      document.getElementById('formModal').classList.remove('active');
+    }
+  </script>
 
 </body>
 </html>
