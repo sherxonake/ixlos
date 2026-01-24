@@ -4,177 +4,200 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IXLOS — Premium Medical Center</title>
-  <link rel="icon" href="favicon.ico">
-
+  <link rel="icon" href="favicon.ico" />
   <style>
-    *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu}
-    body{background:#0b0f18;color:#fff}
+    :root{
+      --red:#ff2b2b;
+      --bg:#0b1020;
+      --card:rgba(255,255,255,.08);
+      --border:rgba(255,255,255,.15);
+      --text:#e9ecff;
+      --muted:#b9c0ff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);background:#050815;
+    }
     a{color:inherit;text-decoration:none}
-
+    .container{max-width:1200px;margin:0 auto;padding:24px}
+    /* HERO */
     .hero{
-      position:relative;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
+      position:relative;min-height:92vh;border-radius:28px;margin:16px;
+      display:grid;align-items:center;overflow:hidden;
     }
     .hero::before{
-      content:"";
-      position:absolute;inset:0;
+      content:"";position:absolute;inset:0;
       background:
-        linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.9)),
-        url("hero.jpg") center center / cover no-repeat;
+        linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.85)),
+        url("hero.jpg") center center/cover no-repeat;
       z-index:-1;
     }
-
-    .card{
-      max-width:520px;
-      width:100%;
-      background:rgba(15,20,35,.75);
-      backdrop-filter: blur(20px);
-      border-radius:28px;
-      padding:28px;
+    .hero-card{
+      max-width:640px;background:rgba(0,0,0,.55);
+      backdrop-filter: blur(14px);
+      border:1px solid var(--border);
+      border-radius:24px;padding:28px 28px 32px;
       box-shadow:0 40px 120px rgba(0,0,0,.6);
     }
-
-    .badge{
-      display:inline-block;
-      background:rgba(255,255,255,.1);
-      padding:6px 12px;
-      border-radius:999px;
-      margin-bottom:12px;
-      font-size:14px;
-    }
-
-    h1{font-size:34px;line-height:1.2;margin-bottom:10px}
-    p{opacity:.9;margin-bottom:18px}
-
+    .badge{display:inline-block;padding:6px 12px;border-radius:999px;
+      background:rgba(255,255,255,.1);border:1px solid var(--border);margin-bottom:12px}
+    h1{font-size:42px;line-height:1.1;margin:8px 0 10px}
+    .sub{color:#fff;opacity:.9}
+    .desc{color:var(--muted);margin:12px 0 18px}
     .btn{
-      display:inline-block;
-      background:#ff1e1e;
-      color:#fff;
-      padding:14px 22px;
-      border-radius:14px;
-      font-weight:600;
-      box-shadow:0 12px 40px rgba(255,30,30,.6);
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--red);color:#fff;border:none;border-radius:14px;
+      padding:14px 18px;font-weight:700;cursor:pointer;
+      box-shadow:0 14px 40px rgba(255,43,43,.45)
     }
-
-    .call-btn{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      width:58px;height:58px;
-      border-radius:50%;
-      background:#ff1e1e;
-      display:flex;align-items:center;justify-content:center;
-      box-shadow:0 12px 40px rgba(255,30,30,.6);
-      z-index:20;
+    .btn.outline{
+      background:transparent;border:1px solid var(--border);color:#fff;
+      box-shadow:none;margin-left:10px
     }
-
-    .section{
-      padding:64px 20px;
-      max-width:1100px;
-      margin:auto;
+    /* SECTIONS */
+    section{padding:40px 0}
+    .grid{display:grid;gap:20px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:20px;padding:20px;backdrop-filter: blur(10px)
     }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
+    .card h3{margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .service{display:flex;flex-direction:column;gap:6px}
+    .service b{font-size:18px}
+    .team{
+      border-radius:24px;overflow:hidden;border:1px solid var(--border)
     }
-
-    .box{
-      background:#111827;
-      border-radius:22px;
-      padding:20px;
-    }
-
+    .team img{width:100%;display:block}
+    /* CONTACTS */
+    .contacts .row{display:flex;flex-wrap:wrap;gap:16px}
+    .chip{display:inline-flex;gap:8px;align-items:center;
+      padding:10px 14px;border-radius:999px;border:1px solid var(--border)}
+    /* FOOTER */
+    footer{opacity:.7;text-align:center;padding:20px 0}
+    /* MODAL */
     .modal{
-      position:fixed;inset:0;
-      background:rgba(0,0,0,.7);
-      display:none;
-      align-items:center;justify-content:center;
-      z-index:30;
+      position:fixed;inset:0;background:rgba(0,0,0,.6);
+      display:none;align-items:center;justify-content:center;z-index:50
     }
     .modal.active{display:flex}
-    .modal-inner{
-      width:100%;
-      max-width:520px;
-      height:80vh;
-      background:#fff;
-      border-radius:18px;
-      overflow:hidden;
+    .modal-box{
+      width:min(900px,92vw);height:min(90vh,700px);
+      background:#fff;border-radius:20px;overflow:hidden;position:relative
     }
-
-    footer{
-      text-align:center;
-      padding:32px;
-      opacity:.7;
-      font-size:14px;
+    .modal-box iframe{width:100%;height:100%;border:0}
+    .close{
+      position:absolute;top:10px;right:10px;background:#000;color:#fff;
+      border-radius:10px;border:none;padding:8px 10px;cursor:pointer
     }
-
-    @media(max-width:600px){
-      h1{font-size:28px}
-      .hero::before{
-        background:
-          linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.95)),
-          url("hero.jpg") center 30% / cover no-repeat;
-      }
+    /* CALL BTN */
+    .call{
+      position:fixed;right:16px;bottom:16px;z-index:40;
+      width:60px;height:60px;border-radius:50%;
+      background:var(--red);display:grid;place-items:center;
+      box-shadow:0 14px 40px rgba(255,43,43,.45)
+    }
+    /* RESPONSIVE */
+    @media (max-width:900px){
+      .grid-3{grid-template-columns:1fr}
+      .grid-4{grid-template-columns:1fr 1fr}
+      h1{font-size:32px}
+      .hero{min-height:85vh;margin:10px}
+      .hero-card{padding:22px}
     }
   </style>
 </head>
-
 <body>
 
-<section class="hero">
-  <div class="card">
-    <span class="badge">IXLOS Shifoxona</span>
-    <h1>Sog‘lig‘ingiz ishonchli qo‘llarda</h1>
-    <p>Ваше здоровье — в надёжных руках.<br>IXLOS — Навоийдаги премиум тиббий марказ.</p>
-    <a href="#" class="btn" onclick="openForm()">Qabulga yozilish / Записаться</a>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <span class="badge">IXLOS Shifoxona — Premium</span>
+        <h1>Sog‘lig‘ingiz ishonchli qo‘llarda</h1>
+        <div class="sub">Ваше здоровье — в надёжных руках</div>
+        <p class="desc">IXLOS — Навоидаги премиум тиббий марказ. Sizga yuqori darajadagi xizmatlarni taklif qilamiz.</p>
+        <button class="btn" onclick="openForm()">Qabulga yozilish / Записаться</button>
+        <button class="btn outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Xizmatlar</button>
+      </div>
+    </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="grid">
-    <div class="box">
+  <!-- ABOUT -->
+  <section class="container">
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Biz haqimizda / О клинике</h3>
+        <p class="muted">IXLOS — Навои шаҳридаги премиум тиббий марказ. Tajribali shifokorlar, zamonaviy texnologiyalar va qulay muhit.</p>
+      </div>
+      <div class="card">
+        <h3>Tezkor qabul</h3>
+        <p class="muted">Navbatlarsiz yozilish. Administrator siz bilan bog‘lanadi.</p>
+      </div>
+      <div class="card">
+        <h3>Sifat va ishonch</h3>
+        <p class="muted">Har bir bemorga individual yondashuv.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="container">
+    <h2>Xizmatlar / Услуги</h2>
+    <div class="grid grid-4">
+      <div class="card service"><b>UZI</b><span class="muted">Barcha turlar</span></div>
+      <div class="card service"><b>Analizlar</b><span class="muted">Laboratoriya</span></div>
+      <div class="card service"><b>Kardiolog</b><span class="muted">Yurak</span></div>
+      <div class="card service"><b>Terapevt</b><span class="muted">Birlamchi qabul</span></div>
+      <div class="card service"><b>Ginekolog</b><span class="muted">Ayollar salomatligi</span></div>
+      <div class="card service"><b>Diagnostika</b><span class="muted">Kompleks</span></div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="container">
+    <h2>Bizning jamoa / Наша команда</h2>
+    <div class="team">
+      <img src="team.jpg" alt="IXLOS Team">
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="container contacts">
+    <div class="card">
       <h3>Kontaktlar</h3>
-      <p>📍 г. Навои, Xoncharbog' MFY,<br>Nizomiy ko'chasi, 28-uy</p>
-      <p>📞 <a href="tel:+998792000303">+998 79 200 03 03</a></p>
-      <p>💬 <a href="https://t.me/ixlos_medical" target="_blank">@ixlos_medical</a></p>
+      <div class="row">
+        <span class="chip">📍 г. Навои, Xoncharbog' MFY, Nizomiy ko'chasi, 28-uy</span>
+        <a class="chip" href="tel:+998792000303">📞 +998 79 200 03 03</a>
+        <a class="chip" href="https://t.me/ixlos_medical" target="_blank">💬 @ixlos_medical</a>
+        <a class="chip" href="https://yandex.uz/profile/240550900992?lang=ru" target="_blank">🗺 Открыть карту</a>
+      </div>
     </div>
+  </section>
 
-    <div class="box">
-      <h3>Biz haqimizda</h3>
-      <p>IXLOS — Навоий шаҳридаги премиум тиббий марказ. Қулай, тез ва сифатли хизмат.</p>
+  <footer>
+    Powered by <a href="https://t.me/sherxon571" target="_blank">@sherxon571</a>
+  </footer>
+
+  <!-- MODAL FORM -->
+  <div id="modal" class="modal">
+    <div class="modal-box">
+      <button class="close" onclick="closeForm()">✕</button>
+      <iframe src="https://tally.so/r/EkxBLq"></iframe>
     </div>
   </div>
-</section>
 
-<footer>
-  © IXLOS Medical Center<br>
-  Powered by <a href="https://t.me/sherxon571" target="_blank">@sherxon571</a>
-</footer>
+  <!-- CALL BUTTON -->
+  <a class="call" href="tel:+998792000303" aria-label="Call">
+    📞
+  </a>
 
-<a href="tel:+998792000303" class="call-btn">📞</a>
-
-<div class="modal" id="formModal">
-  <div class="modal-inner">
-    <iframe src="https://tally.so/r/EkxBLq" width="100%" height="100%" frameborder="0"></iframe>
-  </div>
-</div>
-
-<script>
-  function openForm(){
-    document.getElementById('formModal').classList.add('active');
-  }
-  document.getElementById('formModal').addEventListener('click',e=>{
-    if(e.target.id==='formModal'){
-      e.currentTarget.classList.remove('active');
-    }
-  });
-</script>
-
+  <script>
+    function openForm(){ document.getElementById('modal').classList.add('active'); }
+    function closeForm(){ document.getElementById('modal').classList.remove('active'); }
+  </script>
 </body>
 </html>
