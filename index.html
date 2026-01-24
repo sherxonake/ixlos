@@ -4,9 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IXLOS — Premium Medical Center</title>
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#0b0f14;
@@ -33,12 +38,13 @@
       display:flex;
       align-items:flex-end;
       padding:48px;
+      box-shadow:0 40px 120px rgba(0,0,0,.6);
     }
     .hero::before{
       content:"";
       position:absolute;inset:0;
       background:
-        linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.75)),
+        linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.8)),
         url("team.jpg") center 25% / cover no-repeat;
     }
     .hero-content{
@@ -52,9 +58,11 @@
       border-radius:999px;
       font-size:12px;
       margin-bottom:12px;
+      backdrop-filter:blur(6px);
     }
     h1{font-size:48px;line-height:1.1;margin:0 0 12px}
     .lead{color:#e5e7eb;margin-bottom:20px}
+    .muted{color:var(--muted)}
     .btn{
       display:inline-block;
       padding:14px 22px;
@@ -62,7 +70,11 @@
       font-weight:600;
       margin-right:10px;
     }
-    .primary{background:var(--red);color:white}
+    .primary{
+      background:linear-gradient(135deg,#ff2a2a,#c60000);
+      color:white;
+      box-shadow:0 10px 30px rgba(255,0,0,.35);
+    }
     .secondary{border:1px solid rgba(255,255,255,.2)}
 
     .grid{
@@ -72,10 +84,12 @@
       margin-top:32px;
     }
     .card{
-      background:var(--card);
+      background:linear-gradient(180deg,#141a29,#0e131d);
       border-radius:20px;
       padding:24px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
     }
+
     footer{
       color:var(--muted);
       margin:48px 0 24px;
@@ -86,11 +100,12 @@
     .modal{
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,.7);
+      background:rgba(0,0,0,.75);
       display:none;
       align-items:center;
       justify-content:center;
       z-index:999;
+      backdrop-filter:blur(6px);
     }
     .modal.active{display:flex}
     .modal-box{
@@ -101,6 +116,7 @@
       border-radius:20px;
       overflow:hidden;
       position:relative;
+      box-shadow:0 40px 120px rgba(0,0,0,.8);
     }
     .modal-close{
       position:absolute;
@@ -108,11 +124,17 @@
       font-size:22px;
       cursor:pointer;
       z-index:2;
+      color:#fff;
     }
     .modal iframe{
       width:100%;
       height:100%;
       border:0;
+    }
+
+    @media(max-width:700px){
+      h1{font-size:34px}
+      .hero{padding:24px}
     }
   </style>
 </head>
@@ -142,7 +164,7 @@
     </div>
     <div class="card">
       <h3>Xizmatlar / Услуги</h3>
-      <p class="muted">UZI, Analizlar, Kardiolog, Ginekolog, Terapevt</p>
+      <p class="muted">UZI, Analizlar, Kardiolog, Ginekolog, Terapevt, Diagnostika</p>
     </div>
     <div class="card">
       <h3>Savollar / Вопросы</h3>
