@@ -133,6 +133,30 @@
       border:0;
     }
 
+    /* CALL BUTTON */
+    .call-btn{
+      position:fixed;
+      right:16px;
+      bottom:90px;
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#ff2a2a,#c60000);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      box-shadow:0 20px 40px rgba(255,0,0,.45);
+      z-index:998;
+      animation:pulse 2s infinite;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(255,31,31,.6)}
+      70%{box-shadow:0 0 0 18px rgba(255,31,31,0)}
+      100%{box-shadow:0 0 0 0 rgba(255,31,31,0)}
+    }
+
     @media(max-width:700px){
       h1{font-size:32px}
       .hero{
@@ -202,6 +226,9 @@
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScEF2-_Bda1XrJFukFhvuK5s3j4WWE3Fgyj2XPbcLAJpZ5_oA/viewform?embedded=true"></iframe>
   </div>
 </div>
+
+<!-- CALL BUTTON -->
+<a href="tel:+998792000303" class="call-btn">📞</a>
 
 <script>
   function openModal(){
