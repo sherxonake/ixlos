@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IXLOS —  Medical Center</title>
+  <title>IXLOS —  Shifoxonasi xalq tanlovi </title>
   <link rel="icon" href="favicon.ico" />
 
   <style>
@@ -35,35 +35,27 @@
       align-items:center;
       overflow:hidden;
     }
-   .hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.75)),
-    url("hero.jpg") center center / cover no-repeat;
-  z-index:-1;
-}
-
-
-.hero-card{
-  max-width:640px;
-  background: linear-gradient(
-    135deg,
-    rgba(20,20,20,0.75),
-    rgba(10,10,10,0.55)
-  );
-  backdrop-filter: blur(26px) saturate(140%);
-  -webkit-backdrop-filter: blur(26px) saturate(140%);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 28px;
-  padding: 28px 28px 32px;
-  color: #fff;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.05),
-    0 30px 90px rgba(0,0,0,.75);
-}
-
+    .hero::before{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.75)),
+        url("hero.jpg") center center/cover no-repeat;
+      z-index:-1;
+    }
+    .hero-card{
+      max-width:640px;
+      background: linear-gradient(135deg, rgba(20,20,20,.75), rgba(10,10,10,.55));
+      backdrop-filter: blur(26px) saturate(140%);
+      -webkit-backdrop-filter: blur(26px) saturate(140%);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:28px;
+      padding:28px 28px 32px;
+      color:#fff;
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.05),
+        0 30px 90px rgba(0,0,0,.75);
+    }
     .badge{
       display:inline-block;
       padding:6px 12px;
@@ -100,8 +92,14 @@
     }
     .card h3{margin:0 0 8px}
     .muted{color:var(--muted)}
-    .service{display:flex;flex-direction:column;gap:6px}
+
+    .service{
+      display:flex;flex-direction:column;gap:6px;
+      transition:.25s; cursor:pointer;
+    }
+    .service:hover{transform:translateY(-4px)}
     .service b{font-size:18px}
+    .emoji{font-size:22px}
 
     .team{
       border-radius:24px;
@@ -173,10 +171,10 @@
   <div class="hero">
     <div class="container">
       <div class="hero-card">
-        <span class="badge">IXLOS Shifoxonasi </span>
+        <span class="badge">IXLOS Shifoxona — Premium</span>
         <h1>Sog‘lig‘ingiz ishonchli qo‘llarda</h1>
         <div class="sub">Ваше здоровье — в надёжных руках</div>
-        <p class="desc">IXLOS — Навоидаги тиббий марказ. Sizga yuqori darajadagi xizmatlarni taklif qilamiz.</p>
+        <p class="desc">IXLOS — Навоидаги премиум тиббий марказ. Sizga yuqori darajadagi xizmatlarni taklif qilamiz.</p>
         <button class="btn" onclick="openForm()">Qabulga yozilish / Записаться</button>
         <button class="btn outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Xizmatlar</button>
       </div>
@@ -188,7 +186,7 @@
     <div class="grid grid-3">
       <div class="card">
         <h3>Biz haqimizda / О клинике</h3>
-        <p class="muted">IXLOS — Навои шаҳридаги тиббий марказ. Tajribali shifokorlar, zamonaviy texnologiyalar va qulay muhit.</p>
+        <p class="muted">IXLOS — Навои шаҳридаги  тиббий марказ. Tajribali shifokorlar, zamonaviy texnologiyalar va qulay muhit.</p>
       </div>
       <div class="card">
         <h3>Tezkor qabul</h3>
@@ -205,12 +203,17 @@
   <section id="services" class="container">
     <h2>Xizmatlar / Услуги</h2>
     <div class="grid grid-4">
-      <div class="card service"><b>UZI</b><span class="muted">Barcha turlar</span></div>
-      <div class="card service"><b>Analizlar</b><span class="muted">Laboratoriya</span></div>
-      <div class="card service"><b>Kardiolog</b><span class="muted">Yurak</span></div>
-      <div class="card service"><b>Terapevt</b><span class="muted">Birlamchi qabul</span></div>
-      <div class="card service"><b>Ginekolog</b><span class="muted">Ayollar salomatligi</span></div>
-      <div class="card service"><b>Diagnostika</b><span class="muted">Kompleks</span></div>
+      <div class="card service"><span class="emoji">🫀</span><b>Kardiolog</b><span class="muted">Yuragingiz sog‘lom bo‘lsin</span><span class="muted">Сердце под надёжным контролем</span></div>
+      <div class="card service"><span class="emoji">🩺</span><b>Nefrolog</b><span class="muted">Buyrak salomatligi biz bilan</span><span class="muted">Здоровье почек без боли и страха</span></div>
+      <div class="card service"><span class="emoji">🔪</span><b>Xirurg</b><span class="muted">Aniq tashxis, to‘g‘ri davolash</span><span class="muted">Точная хирургия и забота</span></div>
+      <div class="card service"><span class="emoji">🚹</span><b>Urolog</b><span class="muted">Erkaklar salomatligi muhim</span><span class="muted">Мужское здоровье — уверенно и деликатно</span></div>
+      <div class="card service"><span class="emoji">🚺</span><b>Ginekolog</b><span class="muted">Ayollar sog‘ligi — ustuvor</span><span class="muted">Женское здоровье в надёжных руках</span></div>
+      <div class="card service"><span class="emoji">🧬</span><b>Endokrinolog</b><span class="muted">Gormonlar muvozanati</span><span class="muted">Контроль гормонов и обмена веществ</span></div>
+      <div class="card service"><span class="emoji">🩹</span><b>Terapevt</b><span class="muted">Birinchi qadam sog‘liqqa</span><span class="muted">Ваш первый шаг к выздоровлению</span></div>
+      <div class="card service"><span class="emoji">🧠</span><b>Nevropatolog</b><span class="muted">Asab tizimi tinch bo‘lsin</span><span class="muted">Здоровье нервной системы</span></div>
+      <div class="card service"><span class="emoji">🪑</span><b>Proktolog</b><span class="muted">Noqulay muammolarga yechim</span><span class="muted">Деликатное решение сложных проблем</span></div>
+      <div class="card service"><span class="emoji">👃</span><b>LOR</b><span class="muted">Nafasingiz erkin bo‘lsin</span><span class="muted">Уши, горло, нос — под контролем</span></div>
+      <div class="card service"><span class="emoji">👶</span><b>Pediatr</b><span class="muted">Bolangiz sog‘ligi biz bilan</span><span class="muted">Здоровье вашего ребёнка — наша забота</span></div>
     </div>
   </section>
 
@@ -229,7 +232,7 @@
       <div class="row">
         <span class="chip">📍 г. Навои, Xoncharbog' MFY, Nizomiy ko'chasi, 28-uy</span>
         <a class="chip" href="tel:+998792000303">📞 +998 79 200 03 03</a>
-        <a class="chip" href="https://t.me/ixlos_shifoxona" target="_blank">💬 @ixlos_shifoxona </a>
+        <a class="chip" href="https://t.me/ixlos_medical" target="_blank">💬 @ixlos_medical</a>
         <a class="chip" href="https://yandex.uz/profile/240550900992?lang=ru" target="_blank">🗺 Открыть карту</a>
       </div>
     </div>
@@ -237,7 +240,7 @@
 
   <footer>
     © IXLOS Medical Center<br>
-    
+    Powered by <a href="https://t.me/sherxon571" target="_blank">@sherxon571</a>
   </footer>
 
   <!-- MODAL FORM -->
